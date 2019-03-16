@@ -12,14 +12,6 @@ import './styles/style.scss';
 
 const store = storeFunction();
 
-store.dispatch(actionAddExpense({description: 'Water Bill', note:'some note',amount:400, createdAt:0}));
-store.dispatch(actionAddExpense({description: 'Gas Bill', note:'another note',amount:600, createdAt:-50}));
-store.dispatch(actionAddExpense({description: 'Gas Bill', note:'another note',amount:100, createdAt:1000}));
-// store.dispatch(actionSearchText('Water'));
-const tmpstore = store.getState();
-const visibleExpenses = getVisibleExpenses(tmpstore.expenses, tmpstore.filters);
-console.log(visibleExpenses);
-
 const jsx = (
     <Provider store = {store}>
         <AppRouter />
